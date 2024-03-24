@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: wordpress
+  annotations:
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+      - vm.comeonomon.ru
+      secretName: example-app-tls
+  rules:
+    - host: vm.comeonomon.ru
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: wordpress
+              port:
+                number: 80

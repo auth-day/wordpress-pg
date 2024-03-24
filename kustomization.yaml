@@ -1,0 +1,6 @@
+resources:
+  - secret.yaml
+  - pg.yaml
+  - wordpress-deployment.yaml
+  - wordpress-ingress.yaml
+  - pg4wp.yaml

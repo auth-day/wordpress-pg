@@ -1,0 +1,8 @@
+FROM ubuntu
+
+workdir /home
+
+ADD pg4wp-preparation.sh /home/pg4wp-preparation.sh
+COPY wp-config.php /home/wp-config.php
+
+ENTRYPOINT /home/pg4wp-preparation.sh
